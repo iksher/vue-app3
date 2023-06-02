@@ -1,0 +1,169 @@
+// Primary colors
+$primary-color: #2196f3;
+$secondary-color: #f50057;
+
+// Fonts
+$font-primary: Arial, sans-serif;
+$font-secondary: 'Roboto', sans-serif;
+
+// RTL support for Hebrew
+$direction: rtl;
+
+// Break Points For Media Queries
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+
+/* Global SCSS */
+/* Body Styles */
+body {
+  direction: $direction;
+  font-family: $font-primary;
+}
+/* End Body Styles */
+
+/* Responsive Container */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: $breakpoint-small) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: $breakpoint-medium) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: $breakpoint-large) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: $breakpoint-xlarge) {
+  .container {
+    max-width: 1140px;
+  }
+}
+/* End Responsive Container */
+
+/* Responsive Row */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+/* Responsive Column */
+.column {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Media Queries for Desktop, Tablet, and Mobile */
+@media (min-width: $breakpoint-xlarge) {
+  .row {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+
+  .column {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: $breakpoint-medium) and (max-width: $breakpoint-xlarge - 1px) {
+  .row {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .column {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+/* End Responsive Row & Column */
+
+/* Buttons */
+/* Success Button */
+button {
+  position: relative;
+  margin: 20px auto;
+  padding: 0;
+  height: 56px;
+  width: 228px;
+  border-radius: 100px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.button-outline-primary {
+  box-sizing: border-box;
+  height: 56px;
+  width: 172px;
+  border: 2px solid #0084F4;
+  border-radius: 100px;
+  background-color: transparent;
+  color: #0084F4;
+}
+
+.button-success {
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+}
+
+.button-google {
+  background-color: #fff;
+  color: $primary-color;
+  border: 1px solid $primary-color;
+
+  .icon-google {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url('google-icon.png') center center no-repeat;
+    background-size: cover;
+    margin-right: 8px;
+  }
+}
+/* End Success Button */
+
+/* Loaders */
+/* Loader Spinner */
+.loader-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}
+/* End Loader Spinner */
